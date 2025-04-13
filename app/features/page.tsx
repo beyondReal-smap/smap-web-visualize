@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import MobileMenu from '../components/MobileMenu'
 
 export default function Features() {
   return (
@@ -9,9 +10,13 @@ export default function Features() {
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center py-16 header-large">
           <div className="flex items-center">
-            <h1 className="text-3xl font-bold text-primary">비주얼라이즈</h1>
+            <Link href="/">
+              <h1 className="text-2xl font-bold text-primary">비주얼라이즈</h1>
+            </Link>
           </div>
-          <nav>
+          
+          {/* 데스크탑 메뉴 */}
+          <nav className="desktop-menu">
             <ul className="flex space-x-8">
               <li><Link href="/" className="font-medium hover:text-primary">홈</Link></li>
               <li><Link href="/features" className="font-medium text-primary">주요기능</Link></li>
@@ -19,7 +24,11 @@ export default function Features() {
               <li><Link href="/contact" className="font-medium hover:text-primary">문의하기</Link></li>
             </ul>
           </nav>
-          <Link href="/contact" className="btn btn-primary px-5 py-2.5 text-base font-medium">시작하기</Link>
+          
+          {/* 모바일 메뉴 */}
+          <MobileMenu currentPath="/features" />
+          
+          <Link href="/contact" className="btn bg-white text-primary hover:bg-gray-100 font-bold px-5 py-2.5 text-base desktop-menu">시작하기</Link>
         </div>
       </header>
 
