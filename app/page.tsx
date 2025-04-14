@@ -102,7 +102,7 @@ export default function Home() {
       <section className="py-24 bg-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">데이터 시각화 예시</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
             SmapVisual은 다양한 유형의 데이터를 시각화하여 직관적으로 이해할 수 있게 도와줍니다.
             아래는 몇 가지 시각화 예시입니다.
           </p>
@@ -131,28 +131,28 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold mb-6">인터랙티브 대시보드</h2>
+              <h2 className="text-4xl font-bold mb-6">맞춤형 인터랙티브 대시보드</h2>
               <p className="text-gray-600 mb-8 text-lg">
-                실시간으로 데이터 트렌드를 모니터링하고 중요한 인사이트를 발견할 수 있는 
-                커스터마이징 가능한 인터랙티브 대시보드를 제공합니다. 드래그 앤 드롭 인터페이스로
-                누구나 쉽게 대시보드를 구성할 수 있습니다.
+                고객님의 비즈니스 요구사항에 맞는 맞춤형 인터랙티브 대시보드를 개발해 드립니다. 
+                데이터 시각화 전문가가 귀사의 데이터를 분석하고, 사용자 친화적인 
+                실시간 대시보드를 설계하여 비즈니스 의사결정을 지원합니다.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>실시간 데이터 업데이트</span>
+                  <span>비즈니스 KPI 중심 맞춤 설계</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>사용자 정의 필터 및 드릴다운</span>
+                  <span>데이터 소스 통합 및 자동 업데이트</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>다양한 차트 및 그래프 옵션</span>
+                  <span>직관적인 UI/UX로 사용자 편의성 극대화</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>알림 및 임계값 설정 기능</span>
+                  <span>모바일 및 태블릿 완벽 지원</span>
                 </li>
               </ul>
             </div>
@@ -174,28 +174,28 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12 mb-16">
             <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold mb-6">맞춤형 보고서</h2>
+              <h2 className="text-4xl font-bold mb-6">맞춤형 보고서 작성</h2>
               <p className="text-gray-600 mb-8 text-lg">
-                고객의 요구사항에 맞는 전문적인 보고서를 자동으로 생성하세요. Python 코드 샘플과 함께
-                제공되는 보고서로 데이터 분석 결과를 효과적으로 전달할 수 있습니다. 
-                비즈니스 인사이트부터 전략적 추천사항까지 완벽한 보고서를 만들 수 있습니다.
+                고객님의 데이터를 기반으로 전문적인 맞춤형 보고서를 작성해 드립니다.
+                데이터 분석 전문가와 디자이너가 협업하여 인사이트가 풍부한 고품질 보고서를 
+                제작합니다. 복잡한 데이터를 명확하고 설득력 있는 스토리로 전환해 드립니다.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>맞춤형 보고서 템플릿</span>
+                  <span>비즈니스 요구사항에 맞춘 분석</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>자동화된 데이터 업데이트</span>
+                  <span>전문 디자이너의 시각적 보고서 제작</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>다양한 포맷 지원 (PDF, HTML, PPT)</span>
+                  <span>다양한 포맷 지원 (PDF, PPT, 웹 대시보드)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">✓</span>
-                  <span>데이터 기반의 인사이트 제공</span>
+                  <span>실행 가능한 전략적 인사이트 제공</span>
                 </li>
               </ul>
             </div>
