@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative bg-blue-600 text-white py-20 overflow-hidden">
+      <section className="relative bg-blue-600 text-white py-24 mt-8 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/patterns/circuit-board.svg')] opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row items-center">
