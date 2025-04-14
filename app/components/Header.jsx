@@ -15,7 +15,7 @@ const Header = () => {
     <header className="bg-white shadow-md py-4 fixed w-full top-0 z-50">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/">
-          <div className="text-2xl font-extrabold text-blue-600">SmapVisual</div>
+          <div className="text-2xl font-extrabold text-blue-600 font-suite">SmapVisual</div>
         </Link>
 
         {/* 데스크탑 메뉴 - 항목 변경 */}
