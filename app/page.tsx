@@ -1,260 +1,204 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import MobileMenu from './components/MobileMenu'
-import VisualizationCarousel from './components/VisualizationCarousel'
+"use client";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { FaRocket, FaChartLine, FaCode, FaBook } from "react-icons/fa";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import VisualizationCarousel from "./components/VisualizationCarousel";
+import CTA from "./components/CTA";
 
 export default function Home() {
   return (
-    <main>
-      {/* 헤더 섹션 */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center py-16 header-large">
-          <div className="flex items-center">
-            <Link href="/">
-              <h1 className="text-2xl font-bold text-primary">비주얼라이즈</h1>
-            </Link>
-          </div>
-          
-          {/* 데스크탑 메뉴 */}
-          <nav className="desktop-menu">
-            <ul className="flex space-x-8">
-              <li><Link href="/" className="font-medium text-primary">홈</Link></li>
-              <li><Link href="/features" className="font-medium hover:text-primary">주요기능</Link></li>
-              <li><Link href="/portfolio" className="font-medium hover:text-primary">포트폴리오</Link></li>
-              <li><Link href="/contact" className="font-medium hover:text-primary">문의하기</Link></li>
-            </ul>
-          </nav>
-          
-          {/* 모바일 메뉴 */}
-          <MobileMenu currentPath="/" />
-          
-          <Link href="/contact" className="btn bg-white text-primary hover:bg-gray-100 font-bold px-5 py-2.5 text-base desktop-menu">시작하기</Link>
-        </div>
-      </header>
-
-      {/* 히어로 섹션 */}
-      <section className="hero">
-        <div className="container mx-auto flex flex-col items-center text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">데이터를 통찰력있는 시각적 경험으로</h2>
-          <p className="text-xl max-w-2xl">비주얼라이즈는 파이썬 기반 데이터 시각화 전문 서비스로, 복잡한 데이터를 명확하고 아름다운 시각적 결과물로 변환합니다.</p>
-          {/* <div className="flex space-x-4">
-            <Link href="/contact" className="btn bg-white text-primary hover:bg-gray-100 font-bold px-8 py-4 text-lg shadow-lg">서비스 시작하기</Link>
-            <Link href="/features" className="btn bg-blue-800 text-white hover:bg-blue-900 font-bold px-8 py-4 text-lg">주요 기능 살펴보기</Link>
-          </div>
-          <div className="mt-12 relative w-full max-w-4xl h-[400px]">
-            <Image
-              src="/dashboard-preview.png"
-              alt="데이터 시각화 대시보드 미리보기"
-              fill
-              className="object-contain rounded-lg shadow-xl"
-            />
-          </div> */}
-        </div>
-      </section>
-
-      {/* 특징 섹션 */}
-      <section className="section bg-blue-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">더 스마트한 데이터 시각화, 직관적인 인사이트</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="feature-card bg-white">
-              <div className="text-primary text-5xl mb-4">
-                <i className="fas fa-chart-line"></i>
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="relative bg-blue-600 text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/patterns/circuit-board.svg')] opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 mb-10 md:mb-0">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                데이터 시각화로 인사이트를 발견하세요
+              </h1>
+              <p className="text-xl mb-8 max-w-xl">
+                SmapVisual은 복잡한 데이터를 이해하기 쉬운 시각적 형태로 변환하여 <br/>
+                더 나은 비즈니스 의사결정을 도와줍니다.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors text-center">
+                  상담 문의하기
+                </Link>
               </div>
-              <h3 className="text-xl font-bold mb-2">고급 데이터 시각화</h3>
-              <p>파이썬의 강력한 라이브러리를 활용한 맞춤형 차트와 그래프로 데이터의 모든 측면을 표현합니다.</p>
             </div>
-            
-            <div className="feature-card bg-white">
-              <div className="text-primary text-5xl mb-4">
-                <i className="fas fa-magic"></i>
-              </div>
-              <h3 className="text-xl font-bold mb-2">인터랙티브 대시보드</h3>
-              <p>사용자와 상호작용하는 대시보드로 데이터를 탐색하고 다양한 관점에서 분석할 수 있습니다.</p>
-            </div>
-            
-            <div className="feature-card bg-white">
-              <div className="text-primary text-5xl mb-4">
-                <i className="fas fa-brain"></i>
-              </div>
-              <h3 className="text-xl font-bold mb-2">데이터 분석 솔루션</h3>
-              <p>단순한 시각화를 넘어 고급 통계와 머신러닝을 활용한 깊이 있는 데이터 분석을 제공합니다.</p>
+            <div className="md:w-1/2">
+              <Image 
+                src="/visualization/hero_insight_graph.png" 
+                alt="데이터 인사이트 시각화 예시" 
+                width={800} 
+                height={500}
+                className="rounded-lg shadow-xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 주요 기능 섹션 */}
-      <section className="section">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">비주얼라이즈 주요 기능</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">데이터 시각화</h3>
-                <p className="mb-4">복잡한 데이터셋을 명확하고 이해하기 쉬운 그래픽으로 변환합니다. 막대 그래프, 선 그래프, 파이 차트, 히트맵 등 다양한 시각화 옵션을 제공합니다.</p>
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">주요 기능</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Feature 1 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="bg-blue-100 text-blue-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                <FaChartLine size={24} />
               </div>
-              <div className="relative w-full h-100 mt-4 rounded-lg overflow-hidden bg-gray-50 p-4 border border-gray-200">
-                <VisualizationCarousel />
-              </div>
+              <h3 className="text-xl font-semibold mb-3">다양한 시각화</h3>
+              <p className="text-gray-600">
+                막대 그래프, 파이 차트, 히트맵 등 20가지 이상의 다양한 시각화 유형을 제공합니다.
+              </p>
             </div>
             
-            <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">인터랙티브 대시보드</h3>
-                <p className="mb-4">실시간으로 업데이트되는 대시보드로 데이터의 추이를 모니터링하고 통찰력 있는 의사결정을 지원합니다.</p>
+            {/* Feature 2 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="bg-purple-100 text-purple-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                <FaRocket size={24} />
               </div>
-              <div className="relative w-full h-64 mt-4 rounded-lg overflow-hidden bg-gray-50 p-4 border border-gray-200">
-                <Image
-                  src="/feature-dashboard.png"
-                  alt="인터랙티브 대시보드 예시"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <h3 className="text-xl font-semibold mb-3">실시간 업데이트</h3>
+              <p className="text-gray-600">
+                데이터가 변경될 때마다 자동으로 시각화가 업데이트되어 항상 최신 정보를 확인할 수 있습니다.
+              </p>
             </div>
             
-            <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">데이터 분석</h3>
-                <p className="mb-4">고급 통계 분석과 머신러닝 알고리즘을 통해 데이터의 패턴을 발견하고 미래 트렌드를 예측합니다.</p>
+            {/* Feature 3 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="bg-green-100 text-green-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                <FaCode size={24} />
               </div>
-              <div className="relative w-full h-[500px] mt-4 rounded-lg overflow-hidden bg-gray-50 p-4 border border-gray-200">
-                <Image
-                  src="/visualization/ml_analytics.png"
-                  alt="머신러닝 분석 및 예측 모델 예시"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+              <h3 className="text-xl font-semibold mb-3">API 지원</h3>
+              <p className="text-gray-600">
+                강력한 API를 통해 어떤 애플리케이션이나 서비스에서도 쉽게 통합하여 사용할 수 있습니다.
+              </p>
             </div>
             
-            <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">맞춤형 보고서</h3>
-                <p className="mb-4">고객의 요구사항에 맞춘 전문적인 보고서를 제공하여 데이터 기반 결정을 지원합니다.</p>
+            {/* Feature 4 */}
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="bg-red-100 text-red-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                <FaBook size={24} />
               </div>
-              <div className="relative w-full h-64 mt-4 rounded-lg overflow-hidden bg-gray-50 p-4 border border-gray-200">
-                <Image
-                  src="/feature-reports.png"
-                  alt="맞춤형 보고서 예시"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <h3 className="text-xl font-semibold mb-3">상세한 문서</h3>
+              <p className="text-gray-600">
+                초보자부터 전문가까지 누구나 쉽게 이해할 수 있는 상세한 문서와 튜토리얼을 제공합니다.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 서비스 활용 사례 */}
-      <section className="section bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">비주얼라이즈 활용 사례</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="feature-card bg-white">
-              <div className="relative w-full h-48 mb-4 rounded overflow-hidden">
-                <Image
-                  src="/case-finance.png"
-                  alt="금융 데이터 분석"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-2">금융 데이터 분석</h3>
-              <p>투자 포트폴리오 최적화와 시장 트렌드 시각화로 금융 의사결정을 지원합니다.</p>
-            </div>
-            
-            <div className="feature-card bg-white">
-              <div className="relative w-full h-48 mb-4 rounded overflow-hidden">
-                <Image
-                  src="/case-marketing.png"
-                  alt="마케팅 성과 분석"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-2">마케팅 성과 분석</h3>
-              <p>캠페인 효과와 고객 행동 패턴을 시각화하여 마케팅 전략 최적화에 기여합니다.</p>
-            </div>
-            
-            <div className="feature-card bg-white">
-              <div className="relative w-full h-48 mb-4 rounded overflow-hidden">
-                <Image
-                  src="/case-research.png"
-                  alt="연구 데이터 시각화"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-2">연구 데이터 시각화</h3>
-              <p>복잡한 연구 결과를 명확한 시각적 자료로 변환하여 연구 커뮤니케이션을 강화합니다.</p>
-            </div>
+      {/* Visualization Section */}
+      <section className="py-24 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">데이터 시각화 예시</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            SmapVisual은 다양한 유형의 데이터를 시각화하여 직관적으로 이해할 수 있게 도와줍니다.
+            아래는 몇 가지 시각화 예시입니다.
+          </p>
+          <div className="max-w-4xl mx-auto mb-16">
+            <VisualizationCarousel />
           </div>
         </div>
       </section>
 
-      {/* CTA 섹션 */}
-      <section className="section bg-primary text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">지금 바로 시작하세요</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">비주얼라이즈와 함께 데이터의 숨겨진 가치를 발견하고 비즈니스의 성장을 가속화하세요.</p>
-          <Link href="/contact" className="btn bg-white text-primary hover:bg-gray-100 font-bold px-8 py-4 text-lg shadow-lg">문의하기</Link>
-        </div>
-      </section>
-
-      {/* 푸터 */}
-      <footer className="footer-bg text-white py-12">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">비주얼라이즈</h3>
-              <p>데이터 시각화를 통한 인사이트 발견과 가치 창출의 파트너</p>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-bold mb-4">서비스</h4>
-              <ul className="space-y-2">
-                <li><Link href="/features" className="hover:text-blue-400">데이터 시각화</Link></li>
-                <li><Link href="/features" className="hover:text-blue-400">인터랙티브 대시보드</Link></li>
-                <li><Link href="/features" className="hover:text-blue-400">데이터 분석</Link></li>
-                <li><Link href="/features" className="hover:text-blue-400">맞춤형 보고서</Link></li>
+      {/* Dashboard Demo Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl font-bold mb-6">인터랙티브 대시보드</h2>
+              <p className="text-gray-600 mb-8">
+                실시간으로 데이터 트렌드를 모니터링하고 중요한 인사이트를 발견할 수 있는 
+                커스터마이징 가능한 인터랙티브 대시보드를 제공합니다. 드래그 앤 드롭 인터페이스로
+                누구나 쉽게 대시보드를 구성할 수 있습니다.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>실시간 데이터 업데이트</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>사용자 정의 필터 및 드릴다운</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>다양한 차트 및 그래프 옵션</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>알림 및 임계값 설정 기능</span>
+                </li>
               </ul>
             </div>
-            
-            <div>
-              <h4 className="text-lg font-bold mb-4">회사 정보</h4>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="hover:text-blue-400">회사 소개</Link></li>
-                <li><Link href="/portfolio" className="hover:text-blue-400">포트폴리오</Link></li>
-                <li><Link href="/blog" className="hover:text-blue-400">블로그</Link></li>
-                <li><Link href="/careers" className="hover:text-blue-400">채용정보</Link></li>
-              </ul>
+            <div className="lg:w-1/2">
+              <Image 
+                src="/visualization/interactive_dashboard.png" 
+                alt="인터랙티브 대시보드 예시" 
+                width={800} 
+                height={500}
+                className="rounded-lg shadow-xl"
+              />
             </div>
-            
-            <div>
-              <h4 className="text-lg font-bold mb-4">문의하기</h4>
-              <p className="mb-2">이메일: admin@smap.site</p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-white hover:text-blue-400 flex items-center"><i className="fab fa-twitter mr-1"></i> Twitter</a>
-                <a href="#" className="text-white hover:text-blue-400 flex items-center"><i className="fab fa-facebook mr-1"></i> Facebook</a>
-                <a href="#" className="text-white hover:text-blue-400 flex items-center"><i className="fab fa-instagram mr-1"></i> Instagram</a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-12 pt-8 border-t border-gray-700 text-center">
-            <p className="mb-2">Beyond Real</p>
-            <p className="text-sm mb-2">대표 : 정진 | 208-07-09695 | admin@smap.site</p>
-            <p className="text-sm mb-4">경기도 김포시 김포한강9로75번길 66, 505-A237호 (국제프라자)</p>
-            <p>Copyright ⓒ 2025 비주얼라이즈 All rights reserved.</p>
           </div>
         </div>
-      </footer>
-    </main>
-  )
+      </section>
+
+      {/* Report Demo Section */}
+      <section className="py-20 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+            <div className="lg:w-1/2">
+              <h2 className="text-3xl font-bold mb-6">맞춤형 보고서</h2>
+              <p className="text-gray-600 mb-8">
+                고객의 요구사항에 맞는 전문적인 보고서를 자동으로 생성하세요. Python 코드 샘플과 함께
+                제공되는 보고서로 데이터 분석 결과를 효과적으로 전달할 수 있습니다. 
+                비즈니스 인사이트부터 전략적 추천사항까지 완벽한 보고서를 만들 수 있습니다.
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>맞춤형 보고서 템플릿</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>자동화된 데이터 업데이트</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>다양한 포맷 지원 (PDF, HTML, PPT)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-500 mr-2">✓</span>
+                  <span>데이터 기반의 인사이트 제공</span>
+                </li>
+              </ul>
+            </div>
+            <div className="lg:w-1/2">
+              <Image 
+                src="/visualization/english_custom_report.png" 
+                alt="맞춤형 보고서 예시" 
+                width={800} 
+                height={500}
+                className="rounded-lg shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTA />
+      <Footer />
+    </div>
+  );
 } 

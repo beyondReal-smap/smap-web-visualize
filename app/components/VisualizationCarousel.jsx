@@ -38,47 +38,49 @@ export default function VisualizationCarousel() {
   };
   
   return (
-    <div className="relative w-full h-[400px] my-8">
-      {/* 현재 이미지 */}
-      {images.map((image, index) => (
-        <div
-          key={image}
-          className={`absolute w-full h-full transition-opacity duration-500 ${
-            index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-          }`}
+    <div className="relative w-full bg-white p-6 rounded-lg shadow-lg">
+      <div className="relative w-full h-[400px] mb-8">
+        {/* 현재 이미지 */}
+        {images.map((image, index) => (
+          <div
+            key={image}
+            className={`absolute w-full h-full transition-opacity duration-500 ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={image}
+              alt={`데이터 시각화 예시 ${index + 1}`}
+              fill
+              className="object-contain rounded-lg"
+            />
+          </div>
+        ))}
+        
+        {/* 네비게이션 버튼 */}
+        <button
+          onClick={goToPrevImage}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 shadow-md z-10"
+          aria-label="이전 이미지"
         >
-          <Image
-            src={image}
-            alt={`데이터 시각화 예시 ${index + 1}`}
-            fill
-            className="object-contain rounded-lg shadow-xl"
-          />
-        </div>
-      ))}
-      
-      {/* 네비게이션 버튼 */}
-      <button
-        onClick={goToPrevImage}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 shadow-md z-10"
-        aria-label="이전 이미지"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      
-      <button
-        onClick={goToNextImage}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 shadow-md z-10"
-        aria-label="다음 이미지"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        
+        <button
+          onClick={goToNextImage}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full p-2 shadow-md z-10"
+          aria-label="다음 이미지"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
       
       {/* 인디케이터 */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="flex justify-center space-x-2 pb-4 mt-2">
         {images.map((_, index) => (
           <button
             key={index}
@@ -89,6 +91,10 @@ export default function VisualizationCarousel() {
             aria-label={`이미지 ${index + 1}로 이동`}
           />
         ))}
+      </div>
+      
+      <div className="text-center mt-4 pb-2 text-gray-600 text-sm">
+        <p>← 좌우 화살표로 다양한 그래프를 확인하세요 →</p>
       </div>
     </div>
   );
