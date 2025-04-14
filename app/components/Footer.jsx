@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {/* 로고와 설명 */}
           <div>
             <h2 className="text-2xl font-bold mb-4">SmapVisual</h2>
@@ -30,20 +30,15 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          {/* 연락처 정보 */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">연락처</h3>
-            <p className="text-gray-400 mb-2">이메일: admin@smap.site</p>
-            <p className="text-gray-400 mb-2">텔레그램: @smapvisual <span className="ml-2 text-sm">(실시간 상담)</span></p>
-            <p className="text-gray-400 mb-2">주소: 경기도 김포시 김포한강9로75번길 66, 505-A237호 (국제프라자)</p>
-          </div>
         </div>
 
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} SmapVisual. All rights reserved.
-          </p>
+          <div className="text-gray-400 text-sm mb-4 md:mb-0">
+            <p className="mb-1">Beyond Real</p>
+            <p className="mb-1">대표 : 정진 | 사업자등록번호 : 208-07-09695</p>
+            <p className="mb-1">이메일 : admin@smap.site | 텔레그램 : @smapvisual</p>
+            <p>경기도 김포시 김포한강9로75번길 66, 505-A237호 (국제프라자)</p>
+          </div>
           <div className="flex space-x-4">
             <Link href="/privacy" className="text-gray-400 hover:text-white text-sm">
               개인정보 처리방침
