@@ -68,7 +68,7 @@ export default function Features() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">✓</span>
-                    <span>대용량 데이터를 위한 최적화된 시각화 솔루션</span>
+                    <span>대용량 데이터를 위한 최적화된 시각화 서비스</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">✓</span>
@@ -106,7 +106,7 @@ export default function Features() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">✓</span>
-                    <span>웹 기반 솔루션으로 언제 어디서나 접근 가능</span>
+                    <span>웹 기반 서비스으로 언제 어디서나 접근 가능</span>
                   </li>
                 </ul>
               </div>

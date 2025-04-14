@@ -215,7 +215,7 @@ export default function Dashboard() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">맞춤형 대시보드로 데이터 활용을 극대화하세요</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            귀사의 비즈니스에 최적화된 대시보드 솔루션에 대해 상담해 보세요.
+            귀사의 비즈니스에 최적화된 대시보드 서비스에 대해 상담해 보세요.
           </p>
           <Link href="/contact" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-blue-50 transition-colors inline-block">
             무료 상담 신청하기
