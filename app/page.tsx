@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import MobileMenu from './components/MobileMenu'
+import VisualizationCarousel from './components/VisualizationCarousel'
 
 export default function Home() {
   return (
@@ -36,8 +37,8 @@ export default function Home() {
       <section className="hero">
         <div className="container mx-auto flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">데이터를 통찰력있는 시각적 경험으로</h2>
-          <p className="text-xl mb-8 max-w-2xl">비주얼라이즈는 파이썬 기반 데이터 시각화 전문 서비스로, 복잡한 데이터를 명확하고 아름다운 시각적 결과물로 변환합니다.</p>
-          <div className="flex space-x-4">
+          <p className="text-xl max-w-2xl">비주얼라이즈는 파이썬 기반 데이터 시각화 전문 서비스로, 복잡한 데이터를 명확하고 아름다운 시각적 결과물로 변환합니다.</p>
+          {/* <div className="flex space-x-4">
             <Link href="/contact" className="btn bg-white text-primary hover:bg-gray-100 font-bold px-8 py-4 text-lg shadow-lg">서비스 시작하기</Link>
             <Link href="/features" className="btn bg-blue-800 text-white hover:bg-blue-900 font-bold px-8 py-4 text-lg">주요 기능 살펴보기</Link>
           </div>
@@ -48,7 +49,7 @@ export default function Home() {
               fill
               className="object-contain rounded-lg shadow-xl"
             />
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -91,23 +92,22 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">비주얼라이즈 주요 기능</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="flex flex-col">
-              <h3 className="text-2xl font-bold mb-4">데이터 시각화</h3>
-              <p className="mb-4">복잡한 데이터셋을 명확하고 이해하기 쉬운 그래픽으로 변환합니다. 막대 그래프, 선 그래프, 파이 차트, 히트맵 등 다양한 시각화 옵션을 제공합니다.</p>
-              <div className="relative w-full h-64 mt-4 rounded-lg overflow-hidden">
-                <Image
-                  src="/feature-visualization.png"
-                  alt="데이터 시각화 예시"
-                  fill
-                  className="object-cover"
-                />
+            <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-primary">데이터 시각화</h3>
+                <p className="mb-4">복잡한 데이터셋을 명확하고 이해하기 쉬운 그래픽으로 변환합니다. 막대 그래프, 선 그래프, 파이 차트, 히트맵 등 다양한 시각화 옵션을 제공합니다.</p>
+              </div>
+              <div className="relative w-full h-100 mt-4 rounded-lg overflow-hidden bg-gray-50 p-4 border border-gray-200">
+                <VisualizationCarousel />
               </div>
             </div>
             
-            <div className="flex flex-col">
-              <h3 className="text-2xl font-bold mb-4">인터랙티브 대시보드</h3>
-              <p className="mb-4">실시간으로 업데이트되는 대시보드로 데이터의 추이를 모니터링하고 통찰력 있는 의사결정을 지원합니다.</p>
-              <div className="relative w-full h-64 mt-4 rounded-lg overflow-hidden">
+            <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-primary">인터랙티브 대시보드</h3>
+                <p className="mb-4">실시간으로 업데이트되는 대시보드로 데이터의 추이를 모니터링하고 통찰력 있는 의사결정을 지원합니다.</p>
+              </div>
+              <div className="relative w-full h-64 mt-4 rounded-lg overflow-hidden bg-gray-50 p-4 border border-gray-200">
                 <Image
                   src="/feature-dashboard.png"
                   alt="인터랙티브 대시보드 예시"
@@ -117,23 +117,27 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex flex-col">
-              <h3 className="text-2xl font-bold mb-4">데이터 분석</h3>
-              <p className="mb-4">고급 통계 분석과 머신러닝 알고리즘을 통해 데이터의 패턴을 발견하고 미래 트렌드를 예측합니다.</p>
-              <div className="relative w-full h-64 mt-4 rounded-lg overflow-hidden">
+            <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-primary">데이터 분석</h3>
+                <p className="mb-4">고급 통계 분석과 머신러닝 알고리즘을 통해 데이터의 패턴을 발견하고 미래 트렌드를 예측합니다.</p>
+              </div>
+              <div className="relative w-full h-[500px] mt-4 rounded-lg overflow-hidden bg-gray-50 p-4 border border-gray-200">
                 <Image
-                  src="/feature-analysis.png"
-                  alt="데이터 분석 예시"
+                  src="/visualization/ml_analytics.png"
+                  alt="머신러닝 분석 및 예측 모델 예시"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             </div>
             
-            <div className="flex flex-col">
-              <h3 className="text-2xl font-bold mb-4">맞춤형 보고서</h3>
-              <p className="mb-4">고객의 요구사항에 맞춘 전문적인 보고서를 제공하여 데이터 기반 결정을 지원합니다.</p>
-              <div className="relative w-full h-64 mt-4 rounded-lg overflow-hidden">
+            <div className="flex flex-col bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow">
+              <div>
+                <h3 className="text-2xl font-bold mb-4 text-primary">맞춤형 보고서</h3>
+                <p className="mb-4">고객의 요구사항에 맞춘 전문적인 보고서를 제공하여 데이터 기반 결정을 지원합니다.</p>
+              </div>
+              <div className="relative w-full h-64 mt-4 rounded-lg overflow-hidden bg-gray-50 p-4 border border-gray-200">
                 <Image
                   src="/feature-reports.png"
                   alt="맞춤형 보고서 예시"
