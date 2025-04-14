@@ -35,7 +35,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2">
               <Image 
-                src="/visualization/hero_insight_graph.png" 
+                src="/visualization/hero_insight_graph.webp" 
                 alt="데이터 인사이트 시각화 예시" 
                 width={800} 
                 height={500}
@@ -158,7 +158,7 @@ export default function Home() {
             </div>
             <div className="lg:w-1/2">
               <Image 
-                src="/visualization/interactive_dashboard.png" 
+                src="/visualization/interactive_dashboard.webp" 
                 alt="인터랙티브 대시보드 예시" 
                 width={800} 
                 height={500}
@@ -201,7 +201,7 @@ export default function Home() {
             </div>
             <div className="lg:w-1/2">
               <Image 
-                src="/visualization/english_custom_report.png" 
+                src="/visualization/english_custom_report.webp" 
                 alt="맞춤형 보고서 예시" 
                 width={800} 
                 height={500}

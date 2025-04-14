@@ -92,7 +92,7 @@ export default function Dashboard() {
             <div>
               <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
                 <Image 
-                  src="/visualization/sales_dashboard.png" 
+                  src="/visualization/sales_dashboard.webp" 
                   alt="영업 대시보드" 
                   width={800} 
                   height={500}
@@ -110,7 +110,7 @@ export default function Dashboard() {
             <div>
               <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
                 <Image 
-                  src="/visualization/marketing_dashboard.png" 
+                  src="/visualization/marketing_dashboard.webp" 
                   alt="마케팅 대시보드" 
                   width={800} 
                   height={500}
@@ -128,7 +128,7 @@ export default function Dashboard() {
             <div>
               <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
                 <Image 
-                  src="/visualization/finance_dashboard.png" 
+                  src="/visualization/finance_dashboard.webp" 
                   alt="재무 대시보드" 
                   width={800} 
                   height={500}
@@ -146,7 +146,7 @@ export default function Dashboard() {
             <div>
               <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
                 <Image 
-                  src="/visualization/operations_dashboard.png" 
+                  src="/visualization/operations_dashboard.webp" 
                   alt="운영 대시보드" 
                   width={800} 
                   height={500}
@@ -199,7 +199,7 @@ export default function Dashboard() {
             </div>
             <div className="lg:w-1/2">
               <Image 
-                src="/visualization/dashboard_customization.png" 
+                src="/visualization/dashboard_customization.webp" 
                 alt="대시보드 커스터마이징" 
                 width={800} 
                 height={500}

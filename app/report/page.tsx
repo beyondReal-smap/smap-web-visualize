@@ -98,11 +98,11 @@ export default function Report() {
                 </p>
                 <div className="flex justify-center">
                   <Image 
-                    src="/visualization/english_custom_report.png" 
-                    alt="월간 판매 실적 보고서" 
+                    src="/visualization/monthly_report.webp" 
+                    alt="월간 보고서" 
                     width={800} 
-                    height={1000}
-                    className="rounded-md shadow-sm"
+                    height={500}
+                    className="w-full"
                   />
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function Report() {
                     ROI를 최적화하기 위한 전략을 제시합니다.
                   </p>
                   <Image 
-                    src="/visualization/marketing_report.png" 
+                    src="/visualization/marketing_report.webp" 
                     alt="마케팅 캠페인 성과 보고서" 
                     width={600} 
                     height={400}
@@ -134,7 +134,7 @@ export default function Report() {
                     최적화와 비용 절감을 위한 인사이트를 제공합니다.
                   </p>
                   <Image 
-                    src="/visualization/finance_report.png" 
+                    src="/visualization/finance_report.webp" 
                     alt="재무 분석 보고서" 
                     width={600} 
                     height={400}
@@ -153,7 +153,7 @@ export default function Report() {
                     선호도를 분석하고 맞춤형 전략을 제안합니다.
                   </p>
                   <Image 
-                    src="/visualization/customer_report.png" 
+                    src="/visualization/customer_report.webp" 
                     alt="고객 세그먼트 분석 보고서" 
                     width={600} 
                     height={400}
@@ -170,7 +170,7 @@ export default function Report() {
                     개선 기회를 위한 데이터 기반 제안을 제공합니다.
                   </p>
                   <Image 
-                    src="/visualization/product_report.png" 
+                    src="/visualization/product_report.webp" 
                     alt="제품 성과 분석 보고서" 
                     width={600} 
                     height={400}
@@ -210,7 +210,7 @@ export default function Report() {
                   <div className="md:w-1/2 pl-8 mt-4 md:mt-0">
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <Image 
-                        src="/visualization/process_requirements.png" 
+                        src="/visualization/process_requirements.webp" 
                         alt="요구사항 분석" 
                         width={300} 
                         height={200}
@@ -235,7 +235,7 @@ export default function Report() {
                   <div className="md:w-1/2 pl-8 mt-4 md:mt-0 md:order-1">
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <Image 
-                        src="/visualization/process_analysis.png" 
+                        src="/visualization/process_analysis.webp" 
                         alt="데이터 분석" 
                         width={300} 
                         height={200}
@@ -260,7 +260,7 @@ export default function Report() {
                   <div className="md:w-1/2 pl-8 mt-4 md:mt-0">
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <Image 
-                        src="/visualization/process_design.png" 
+                        src="/visualization/process_design.webp" 
                         alt="보고서 디자인" 
                         width={300} 
                         height={200}
@@ -285,7 +285,7 @@ export default function Report() {
                   <div className="md:w-1/2 pl-8 mt-4 md:mt-0 md:order-1">
                     <div className="bg-white p-4 rounded-lg shadow-md">
                       <Image 
-                        src="/visualization/process_delivery.png" 
+                        src="/visualization/process_delivery.webp" 
                         alt="결과물 전달 및 리뷰" 
                         width={300} 
                         height={200}
