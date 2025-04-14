@@ -49,16 +49,16 @@ export default function Home() {
       {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">주요 기능</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">주요 서비스</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Feature 1 */}
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="bg-blue-100 text-blue-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
                 <FaChartLine size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">다양한 시각화</h3>
+              <h3 className="text-xl font-semibold mb-3">맞춤형 데이터 시각화</h3>
               <p className="text-gray-600">
-                막대 그래프, 파이 차트, 히트맵 등 20가지 이상의 다양한 시각화 유형을 제공합니다.
+                귀사의 데이터와 목적에 맞는 최적의 시각화 솔루션을 설계하고 개발해 드립니다.
               </p>
             </div>
             
@@ -67,9 +67,9 @@ export default function Home() {
               <div className="bg-purple-100 text-purple-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
                 <FaRocket size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">실시간 업데이트</h3>
+              <h3 className="text-xl font-semibold mb-3">데이터 분석 컨설팅</h3>
               <p className="text-gray-600">
-                데이터가 변경될 때마다 자동으로 시각화가 업데이트되어 항상 최신 정보를 확인할 수 있습니다.
+                데이터 전문가가 귀사의 데이터를 심층 분석하여 숨겨진 인사이트와 기회를 발견합니다.
               </p>
             </div>
             
@@ -78,9 +78,9 @@ export default function Home() {
               <div className="bg-green-100 text-green-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
                 <FaCode size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">API 지원</h3>
+              <h3 className="text-xl font-semibold mb-3">맞춤형 API 개발</h3>
               <p className="text-gray-600">
-                강력한 API를 통해 어떤 애플리케이션이나 서비스에서도 쉽게 통합하여 사용할 수 있습니다.
+                귀사의 시스템과 완벽하게 통합되는 커스텀 API를 개발하여 데이터 활용성을 극대화합니다.
               </p>
             </div>
             
@@ -89,9 +89,9 @@ export default function Home() {
               <div className="bg-red-100 text-red-600 w-12 h-12 flex items-center justify-center rounded-full mb-4">
                 <FaBook size={24} />
               </div>
-              <h3 className="text-xl font-semibold mb-3">상세한 문서</h3>
+              <h3 className="text-xl font-semibold mb-3">교육 및 기술 지원</h3>
               <p className="text-gray-600">
-                초보자부터 전문가까지 누구나 쉽게 이해할 수 있는 상세한 문서와 튜토리얼을 제공합니다.
+                개발된 솔루션의 효과적인 활용을 위한 맞춤형 교육과 지속적인 기술 지원을 제공합니다.
               </p>
             </div>
           </div>

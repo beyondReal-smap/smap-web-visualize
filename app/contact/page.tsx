@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaTelegram, FaEnvelope } from 'react-icons/fa'
 
 export default function Contact() {
   return (
@@ -143,10 +143,10 @@ export default function Contact() {
               
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FaPhoneAlt size={24} />
+                  <FaTelegram size={24} />
                 </div>
-                <h3 className="text-xl font-bold mb-2">전화</h3>
-                <p className="text-gray-600 text-lg">02-123-4567<br />평일 09:00 - 18:00</p>
+                <h3 className="text-xl font-bold mb-2">텔레그램 채팅</h3>
+                <p className="text-gray-600 text-lg">@smapvisual<br />실시간 상담 가능</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -154,7 +154,7 @@ export default function Contact() {
                   <FaEnvelope size={24} />
                 </div>
                 <h3 className="text-xl font-bold mb-2">이메일</h3>
-                <p className="text-gray-600 text-lg">admin@smap.site<br />영업 및 제휴 문의: sales@smap.site</p>
+                <p className="text-gray-600 text-lg">admin@smap.site</p>
               </div>
             </div>
           </div>
@@ -169,28 +169,28 @@ export default function Contact() {
             
             <div className="space-y-6">
               <div className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold mb-2">맞춤형 시각화 서비스는 어떤 과정으로 진행되나요?</h3>
+                <p className="text-gray-600 text-lg">초기 상담 → 요구사항 분석 → 데이터 검토 → 시각화 설계 → 개발 및 구현 → 피드백 및 수정 → 최종 결과물 전달 → 사후 지원의 단계로 진행됩니다. 각 단계마다 고객과 긴밀히 소통하며 맞춤형 결과물을 제작합니다.</p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold mb-2">서비스 비용은 어떻게 책정되나요?</h3>
                 <p className="text-gray-600 text-lg">프로젝트의 규모, 복잡성, 요구사항에 따라 맞춤형으로 견적을 산출합니다. 정확한 비용은 상담을 통해 결정되며, 투명한 가격 정책을 제공합니다.</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">프로젝트 완료까지 얼마나 걸리나요?</h3>
-                <p className="text-gray-600 text-lg">간단한 시각화는 1-2주 내에 완료 가능하며, 복잡한 대시보드나 분석 프로젝트는 4-8주가 소요될 수 있습니다. 구체적인 일정은 요구사항에 따라 결정됩니다.</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">어떤 데이터 형식을 지원하나요?</h3>
-                <p className="text-gray-600 text-lg">CSV, Excel, JSON, SQL 데이터베이스 등 대부분의 표준 데이터 형식을 지원합니다. 특수한 형식의 데이터도 전처리를 통해 처리 가능합니다.</p>
+                <h3 className="text-xl font-bold mb-2">맞춤형 대시보드 개발 후 수정이 필요하면 어떻게 하나요?</h3>
+                <p className="text-gray-600 text-lg">모든 프로젝트에는 초기 수정 기간이 포함되어 있으며, 이후에도 유지보수 계약을 통해 지속적인 업데이트와 개선이 가능합니다. 비즈니스 요구사항 변화에 따라 대시보드도 함께 진화할 수 있습니다.</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold mb-2">데이터 보안은 어떻게 보장되나요?</h3>
-                <p className="text-gray-600 text-lg">모든 고객 데이터는 암호화되어 안전하게 처리되며, 엄격한 데이터 보안 정책을 준수합니다. 필요시 NDA 체결을 통해 추가적인 보안을 제공합니다.</p>
+                <p className="text-gray-600 text-lg">모든 고객 데이터는 암호화되어 안전하게 처리되며, 엄격한 데이터 보안 정책을 준수합니다. 필요시 NDA 체결을 통해 추가적인 보안을 제공하고, 고객이 원할 경우 온프레미스 환경에서도 작업이 가능합니다.</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">완성된 시각화 결과물을 어떻게 제공받나요?</h3>
-                <p className="text-gray-600 text-lg">웹 기반 대시보드, 정적 보고서(PDF), 인터랙티브 파일 등 다양한 형태로 제공 가능합니다. 고객의 환경과 요구사항에 맞게 최적화된 형태로 전달합니다.</p>
+                <h3 className="text-xl font-bold mb-2">기존 시스템과의 통합도 가능한가요?</h3>
+                <p className="text-gray-600 text-lg">네, 고객의 기존 시스템(ERP, CRM, 마케팅 도구 등)과 완벽하게 통합되는 맞춤형 솔루션을 개발합니다. API 연동, 데이터 파이프라인 구축 등을 통해 원활한 데이터 흐름을 보장합니다.</p>
               </div>
             </div>
           </div>

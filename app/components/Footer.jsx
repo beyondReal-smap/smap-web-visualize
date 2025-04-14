@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaTelegram } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -35,7 +35,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">연락처</h3>
             <p className="text-gray-400 mb-2">이메일: admin@smap.site</p>
-            <p className="text-gray-400 mb-2">전화: 02-123-4567</p>
+            <p className="text-gray-400 mb-2">텔레그램: @smapvisual <span className="ml-2 text-sm">(실시간 상담)</span></p>
             <p className="text-gray-400 mb-2">주소: 경기도 김포시 김포한강9로75번길 66, 505-A237호 (국제프라자)</p>
           </div>
         </div>
