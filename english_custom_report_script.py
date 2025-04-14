@@ -175,7 +175,7 @@ def create_custom_report():
     revenue_text = f"Total Revenue\n${current_revenue/1000000:.1f}M"
     if revenue_growth > 0:
         revenue_text += f"\n+ {revenue_growth:.1f}% Growth"
-        revenue_color = '#4285F4'  # 녹색에서 파란색으로 변경
+        revenue_color = '#0D47A1'  # 더 진한 파란색으로 변경
     else:
         revenue_text += f"\n- {abs(revenue_growth):.1f}% Decline"
         revenue_color = '#EA4335'  # Red for negative growth
@@ -187,7 +187,7 @@ def create_custom_report():
     profit_text = f"Operating Profit\n${current_profit/1000000:.1f}M"
     if profit_growth > 0:
         profit_text += f"\n+ {profit_growth:.1f}% Growth"
-        profit_color = '#4285F4'  # 녹색에서 파란색으로 변경
+        profit_color = '#0D47A1'  # 더 진한 파란색으로 변경
     else:
         profit_text += f"\n- {abs(profit_growth):.1f}% Decline"
         profit_color = '#EA4335'
@@ -199,7 +199,7 @@ def create_custom_report():
     customer_text = f"Total Customers\n{current_customers:,}"
     if customer_growth > 0:
         customer_text += f"\n+ {customer_growth:.1f}% Growth"
-        customer_color = '#4285F4'  # 녹색에서 파란색으로 변경
+        customer_color = '#0D47A1'  # 더 진한 파란색으로 변경
     else:
         customer_text += f"\n- {abs(customer_growth):.1f}% Decline"
         customer_color = '#EA4335'
@@ -212,8 +212,8 @@ def create_custom_report():
     add_shadow(kpi_ax, avg_purchase_text, 0.875, 0.5, ha='center', va='center', size=kpi_text_size, 
               bbox=kpi_style_neutral, color='#333333', fontweight='bold')
 
-    # Add separator line under KPIs - 구분선 위치를 0.83에서 0.87로 변경하여 더 위로 올림
-    fig.add_artist(plt.Line2D([0.05, 0.95], [0.87, 0.87], color='#dddddd', linewidth=2, transform=fig.transFigure))
+    # Add separator line under KPIs - 구분선 위치를 0.87에서 0.90로 변경하여 더 위로 올림
+    fig.add_artist(plt.Line2D([0.05, 0.95], [0.90, 0.90], color='#dddddd', linewidth=2, transform=fig.transFigure))
     
     # 1. Monthly revenue and profit trends with enhanced styling
     ax1 = fig.add_subplot(gs[1, 0])

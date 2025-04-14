@@ -11,8 +11,7 @@ const CTA = () => {
           데이터를 통해 비즈니스의 미래를 확인하세요
         </h2>
         <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-          지금 바로 SmapVisual을 시작하고 데이터의 힘을 경험해보세요. <br/>
-          무료 체험을 통해 데이터 시각화의 가능성을 확인하세요.
+          지금 바로 문의하시고 데이터 시각화가 가져올 혁신적인 변화를 경험해보세요.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link href="/contact" className="border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white/10 transition-colors text-lg">

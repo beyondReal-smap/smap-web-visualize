@@ -56,9 +56,10 @@ const Footer = () => {
           {/* 문의 */}
           <div>
             <h3 className="text-lg font-semibold mb-4">문의하기</h3>
-            <p className="text-gray-400 mb-2">서울특별시 강남구 테헤란로 123</p>
-            <p className="text-gray-400 mb-2">contact@smap.site</p>
-            <p className="text-gray-400">02-123-4567</p>
+            {/* <p className="text-gray-400 mb-2">경기도 김포시 김포한강9로75번길 66, 505-A237호 (국제프라자)</p> */}
+            {/* <p className="text-gray-400 mb-2">사업자 번호 : 208-07-09695</p>             */}
+            <a href="mailto:admin@smap.site" className="text-gray-400 hover:text-white mb-2 inline-block">admin@smap.site</a>
+            {/* <p className="text-gray-400">02-123-4567</p> */}
           </div>
         </div>
         

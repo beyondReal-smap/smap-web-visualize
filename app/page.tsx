@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import VisualizationCarousel from "./components/VisualizationCarousel";
 import CTA from "./components/CTA";
+import CodeShowcase from "./components/CodeShowcase";
 
 export default function Home() {
   return (
@@ -46,7 +47,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">주요 기능</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -97,8 +98,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Visualization Section */}
-      <section className="py-24 bg-gray-100">
+      {/* Visualization Section - 연한 파란색 배경 */}
+      <section className="py-24 bg-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-4">데이터 시각화 예시</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -110,14 +111,28 @@ export default function Home() {
           </div>
         </div>
       </section>
+          
+      {/* Python Code Showcase - 별도 섹션으로 분리 및 배경색 변경 */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-6">파이썬으로 작성된 시각화 코드</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
+            데이터 시각화 보고서는 matplotlib, pandas, numpy 등의 라이브러리를 활용하여 작성됩니다. <br/>
+            아래는 보고서 생성에 사용된 주요 코드 샘플입니다.
+          </p>
+          <div className="max-w-4xl mx-auto">
+            <CodeShowcase />
+          </div>
+        </div>
+      </section>
 
-      {/* Dashboard Demo Section */}
-      <section className="py-20">
+      {/* Dashboard Demo Section - 흰색 배경 */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">인터랙티브 대시보드</h2>
-              <p className="text-gray-600 mb-8">
+              <h2 className="text-4xl font-bold mb-6">인터랙티브 대시보드</h2>
+              <p className="text-gray-600 mb-8 text-lg">
                 실시간으로 데이터 트렌드를 모니터링하고 중요한 인사이트를 발견할 수 있는 
                 커스터마이징 가능한 인터랙티브 대시보드를 제공합니다. 드래그 앤 드롭 인터페이스로
                 누구나 쉽게 대시보드를 구성할 수 있습니다.
@@ -154,13 +169,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Report Demo Section */}
-      <section className="py-20 bg-gray-100">
+      {/* Report Demo Section - 연한 보라색 배경 */}
+      <section className="py-20 bg-purple-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+          <div className="flex flex-col lg:flex-row-reverse items-center gap-12 mb-16">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold mb-6">맞춤형 보고서</h2>
-              <p className="text-gray-600 mb-8">
+              <h2 className="text-4xl font-bold mb-6">맞춤형 보고서</h2>
+              <p className="text-gray-600 mb-8 text-lg">
                 고객의 요구사항에 맞는 전문적인 보고서를 자동으로 생성하세요. Python 코드 샘플과 함께
                 제공되는 보고서로 데이터 분석 결과를 효과적으로 전달할 수 있습니다. 
                 비즈니스 인사이트부터 전략적 추천사항까지 완벽한 보고서를 만들 수 있습니다.
