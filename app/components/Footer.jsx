@@ -36,7 +36,10 @@ export default function Footer() {
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             <p className="mb-1">Beyond Real</p>
             <p className="mb-1">대표 : 정진 | 사업자등록번호 : 208-07-09695</p>
-            <p className="mb-1">이메일 : admin@smap.site | 텔레그램 : @smapvisual</p>
+            <p className="mb-1">
+              이메일 : <a href="mailto:admin@smap.site" className="text-gray-400 hover:text-white">admin@smap.site</a> | 
+              텔레그램 : <a href="https://t.me/smapvisual" className="text-gray-400 hover:text-white">@smapvisual</a>
+            </p>
             <p>경기도 김포시 김포한강9로75번길 66, 505-A237호 (국제프라자)</p>
           </div>
           <div className="flex space-x-4">
