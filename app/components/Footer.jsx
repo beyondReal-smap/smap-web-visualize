@@ -13,8 +13,7 @@ export default function Footer() {
           <div>
             <h2 className="text-2xl font-bold mb-4">SmapVisual</h2>
             <p className="mb-4 max-w-md text-gray-400">
-              비즈니스 인사이트를 발견하고 시각화하여 데이터 기반의 의사결정을 지원하는 
-              최고의 데이터 시각화 서비스입니다.
+              고객의 니즈와 데이터 특성에 맞는 맞춤형 시각화 서비스를 제공합니다.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white">
