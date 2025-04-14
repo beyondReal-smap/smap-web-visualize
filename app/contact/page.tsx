@@ -4,7 +4,7 @@ import React, { useState, FormEvent, ChangeEvent } from 'react'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { FaMapMarkerAlt, FaTelegram, FaEnvelope } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaTelegram, FaEnvelope, FaTimes, FaPaperPlane } from 'react-icons/fa'
 
 // 폼 데이터 타입 정의
 interface FormData {
@@ -34,6 +34,16 @@ export default function Contact() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
+    show: false,
+    success: false,
+    message: ''
+  });
+
+  // 텔레그램 메시지 팝업을 위한 상태 추가
+  const [telegramPopupOpen, setTelegramPopupOpen] = useState(false);
+  const [telegramMessage, setTelegramMessage] = useState('');
+  const [telegramSending, setTelegramSending] = useState(false);
+  const [telegramStatus, setTelegramStatus] = useState({
     show: false,
     success: false,
     message: ''
@@ -212,6 +222,59 @@ ${data.message}
     }
   };
 
+  // 텔레그램 메시지 전송 함수
+  const sendTelegramDirectMessage = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!telegramMessage.trim()) return;
+    
+    setTelegramSending(true);
+    setTelegramStatus({ show: false, success: false, message: '' });
+    
+    try {
+      // 텔레그램 API 호출
+      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: `📨 웹사이트에서 직접 보낸 메시지:\n\n${telegramMessage}`,
+          parse_mode: 'HTML'
+        }),
+      });
+
+      const result = await response.json();
+      
+      if (!result.ok) {
+        throw new Error(result.description || '알 수 없는 오류');
+      }
+      
+      // 성공 메시지 설정
+      setTelegramStatus({
+        show: true, 
+        success: true, 
+        message: '메시지가 성공적으로 전송되었습니다.'
+      });
+      
+      // 3초 후 팝업 닫기
+      setTimeout(() => {
+        setTelegramPopupOpen(false);
+        setTelegramStatus({ show: false, success: false, message: '' });
+      }, 3000);
+      
+    } catch (error: any) {
+      console.error('Telegram API error:', error);
+      setTelegramStatus({
+        show: true, 
+        success: false, 
+        message: error.message || '메시지 전송 실패. 다시 시도해주세요.'
+      });
+    } finally {
+      setTelegramSending(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
@@ -381,9 +444,16 @@ ${data.message}
                   <FaTelegram size={24} />
                 </div>
                 <h3 className="text-xl font-bold mb-2">텔레그램 채팅</h3>
-                <a href="https://t.me/smapvisual" className="text-gray-600 hover:text-blue-600 block">
-                  <p className="text-lg">@smapvisual<br />실시간 상담 가능</p>
-                </a>
+                <button 
+                  onClick={() => {
+                    const tempTelegramMessage = formData.message || '';
+                    setTelegramPopupOpen(true);
+                    setTelegramMessage(tempTelegramMessage);
+                  }} 
+                  className="text-gray-600 hover:text-blue-600 block w-full cursor-pointer bg-transparent border-none"
+                >
+                  <p className="text-lg">@smapvisual<br />실시간 메세지 전송 가능</p>
+                </button>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -437,6 +507,57 @@ ${data.message}
       </section>
 
       <Footer />
+
+      {/* 텔레그램 메시지 팝업 */}
+      {telegramPopupOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl w-full max-w-md text-gray-800 relative">
+            <button 
+              onClick={() => setTelegramPopupOpen(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              <FaTimes size={24} />
+            </button>
+            
+            <div className="p-6">
+              <div className="flex items-center mb-4">
+                <FaTelegram size={28} className="text-blue-500 mr-3" />
+                <h3 className="text-xl font-bold">텔레그램 메시지 보내기</h3>
+              </div>
+              
+              {telegramStatus.show && (
+                <div className={`mb-4 p-3 rounded-md ${telegramStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+                  {telegramStatus.message}
+                </div>
+              )}
+              
+              <form onSubmit={sendTelegramDirectMessage}>
+                <textarea
+                  className="w-full border border-gray-300 rounded-md p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  rows={5}
+                  placeholder="메시지를 입력하세요..."
+                  value={telegramMessage}
+                  onChange={(e) => setTelegramMessage(e.target.value)}
+                  required
+                ></textarea>
+                
+                <button
+                  type="submit"
+                  className={`bg-blue-600 text-white px-4 py-2 rounded-md flex items-center justify-center w-full
+                   ${telegramSending ? 'opacity-70 cursor-not-allowed' : 'hover:bg-blue-700'}`}
+                  disabled={telegramSending}
+                >
+                  {telegramSending ? '전송 중...' : (
+                    <>
+                      <FaPaperPlane className="mr-2" /> 메시지 보내기
+                    </>
+                  )}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 } 
