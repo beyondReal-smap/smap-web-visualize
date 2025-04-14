@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: '비주얼라이즈 - 데이터 시각화 전문 서비스',
+  title: 'SMAP Data Visualize - 데이터 시각화 전문 서비스',
   description: '파이썬을 통한 고품질 데이터 시각화 서비스를 제공합니다',
 }
 
