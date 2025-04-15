@@ -111,10 +111,7 @@ export default function Footer() {
 연락처(필수): 
 이메일: 
 문의 제목: 
-문의 내용:
-
-* 답변 받으실 연락처를 반드시 남겨주셔야 답변이 가능합니다.
-* 문의하신 내용은 확인 즉시 답변 드리도록 하겠습니다.`;
+문의 내용:`;
                              setTelegramMessage(defaultTemplate);
                              setShowTelegramPopup(true);
                            }} 
@@ -167,7 +164,6 @@ export default function Footer() {
                 <p className="font-medium mb-1">📝 안내사항</p>
                 <ul className="list-disc list-inside space-y-1">
                   <li>답변 받으실 연락처를 반드시 남겨주세요.</li>
-                  <li>제공된 양식에 맞춰 작성해 주시면 더 빠른 답변이 가능합니다.</li>
                   <li>문의하신 내용은 확인 즉시 답변 드리도록 하겠습니다.</li>
                 </ul>
               </div>
