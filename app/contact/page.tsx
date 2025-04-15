@@ -217,7 +217,7 @@ ${data.message}
       
       return { 
         success: false, 
-        message: error.message || '텔레그램 메시지 전송 실패. 대신 텔레그램 채팅을 열었습니다.' 
+        message: error.message || '텔레그램 메시지 전송 실패. 대신 텔레그램 채팅을 여는 링크를 제공합니다.' 
       };
     }
   };
@@ -446,7 +446,28 @@ ${data.message}
                 <h3 className="text-xl font-bold mb-2">텔레그램 채팅</h3>
                 <button 
                   onClick={() => {
-                    const tempTelegramMessage = formData.message || '';
+                    // 기본 메시지 템플릿 설정
+                    const defaultTemplate = `[문의 내용을 아래 양식에 맞춰 작성해 주세요]
+
+이름: 
+연락처(필수): 
+이메일: 
+문의 제목: 
+문의 내용:
+
+* 답변 받으실 연락처를 반드시 남겨주셔야 답변이 가능합니다.
+* 문의하신 내용은 확인 즉시 답변 드리도록 하겠습니다.`;
+
+                    const tempTelegramMessage = formData.message ? 
+                      `이름: ${formData.name}
+연락처(필수): ${formData.phone || ''}
+이메일: ${formData.email}
+문의 제목: ${formData.subject}
+문의 내용: ${formData.message}
+
+* 답변 받으실 연락처를 반드시 남겨주셔야 답변이 가능합니다.
+* 문의하신 내용은 확인 즉시 답변 드리도록 하겠습니다.` : defaultTemplate;
+
                     setTelegramPopupOpen(true);
                     setTelegramMessage(tempTelegramMessage);
                   }} 
@@ -524,6 +545,15 @@ ${data.message}
                 <FaTelegram size={28} className="text-blue-500 mr-3" />
                 <h3 className="text-xl font-bold">텔레그램 메시지 보내기</h3>
               </div>
+
+              <div className="mb-4 p-3 rounded-md bg-yellow-50 text-yellow-800 text-sm">
+                <p className="font-medium mb-1">📝 안내사항</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>답변 받으실 연락처를 반드시 남겨주세요.</li>
+                  <li>제공된 양식에 맞춰 작성해 주시면 더 빠른 답변이 가능합니다.</li>
+                  <li>문의하신 내용은 확인 즉시 답변 드리도록 하겠습니다.</li>
+                </ul>
+              </div>
               
               {telegramStatus.show && (
                 <div className={`mb-4 p-3 rounded-md ${telegramStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
@@ -534,7 +564,7 @@ ${data.message}
               <form onSubmit={sendTelegramDirectMessage}>
                 <textarea
                   className="w-full border border-gray-300 rounded-md p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  rows={5}
+                  rows={10}
                   placeholder="메시지를 입력하세요..."
                   value={telegramMessage}
                   onChange={(e) => setTelegramMessage(e.target.value)}

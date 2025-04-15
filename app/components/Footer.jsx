@@ -53,6 +53,7 @@ export default function Footer() {
       // 3초 후 상태 메시지 숨기기
       setTimeout(() => {
         setSendStatus({ show: false, success: false, message: '' });
+        setShowTelegramPopup(false);
       }, 3000);
       
     } catch (error) {
@@ -103,7 +104,20 @@ export default function Footer() {
             <p className="mb-1">
               이메일 : <a href="mailto:admin@smap.site" className="text-gray-400 hover:text-white">admin@smap.site</a> | 
               텔레그램 : <button 
-                           onClick={() => setShowTelegramPopup(true)} 
+                           onClick={() => {
+                             const defaultTemplate = `[문의 내용을 아래 양식에 맞춰 작성해 주세요]
+
+이름: 
+연락처(필수): 
+이메일: 
+문의 제목: 
+문의 내용:
+
+* 답변 받으실 연락처를 반드시 남겨주셔야 답변이 가능합니다.
+* 문의하신 내용은 확인 즉시 답변 드리도록 하겠습니다.`;
+                             setTelegramMessage(defaultTemplate);
+                             setShowTelegramPopup(true);
+                           }} 
                            className="text-gray-400 hover:text-white underline bg-transparent border-none p-0 cursor-pointer inline"
                          >
                            @smapvisual
@@ -138,6 +152,15 @@ export default function Footer() {
                 <FaTelegram size={28} className="text-blue-500 mr-3" />
                 <h3 className="text-xl font-bold">텔레그램 메시지 보내기</h3>
               </div>
+
+              <div className="mb-4 p-3 rounded-md bg-yellow-50 text-yellow-800 text-sm">
+                <p className="font-medium mb-1">📝 안내사항</p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>답변 받으실 연락처를 반드시 남겨주세요.</li>
+                  <li>제공된 양식에 맞춰 작성해 주시면 더 빠른 답변이 가능합니다.</li>
+                  <li>문의하신 내용은 확인 즉시 답변 드리도록 하겠습니다.</li>
+                </ul>
+              </div>
               
               {sendStatus.show && (
                 <div className={`mb-4 p-3 rounded-md ${sendStatus.success ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
@@ -148,7 +171,7 @@ export default function Footer() {
               <form onSubmit={handleTelegramSubmit}>
                 <textarea
                   className="w-full border border-gray-300 rounded-md p-3 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  rows={5}
+                  rows={10}
                   placeholder="메시지를 입력하세요..."
                   value={telegramMessage}
                   onChange={(e) => setTelegramMessage(e.target.value)}
