@@ -126,12 +126,22 @@ export default function Footer() {
             <p>경기도 김포시 김포한강9로75번길 66, 505-A237호 (국제프라자)</p>
           </div>
           <div className="flex space-x-4">
-            <Link href="/privacy" className="text-gray-400 hover:text-white text-sm">
+            <a 
+              href="https://schedulemap.notion.site/2ac62e02f97b4d61945d68c2d89109e9?pvs=4" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-white text-sm"
+            >
               개인정보 처리방침
-            </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white text-sm">
+            </a>
+            <a 
+              href="https://schedulemap.notion.site/30b32b5ad0bc4f99a39b28c0fe5f1de4?pvs=4" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-white text-sm"
+            >
               이용약관
-            </Link>
+            </a>
           </div>
         </div>
       </div>
