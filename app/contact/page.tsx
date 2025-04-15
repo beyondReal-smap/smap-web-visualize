@@ -440,10 +440,6 @@ ${data.message}
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FaTelegram size={24} />
-                </div>
-                <h3 className="text-xl font-bold mb-2">텔레그램 채팅</h3>
                 <button 
                   onClick={() => {
                     // 기본 메시지 템플릿 설정
@@ -471,19 +467,26 @@ ${data.message}
                     setTelegramPopupOpen(true);
                     setTelegramMessage(tempTelegramMessage);
                   }} 
-                  className="text-gray-600 hover:text-blue-600 block w-full cursor-pointer bg-transparent border-none"
+                  className="w-full h-full flex flex-col items-center justify-center cursor-pointer bg-white hover:bg-gray-50 transition-colors rounded-lg"
                 >
-                  <p className="text-lg">@smapvisual<br />실시간 메세지 전송 가능</p>
+                  <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <FaTelegram size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">텔레그램 채팅</h3>
+                  <p className="text-lg text-gray-600">@smapvisual<br />실시간 메세지 전송 가능</p>
                 </button>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FaEnvelope size={24} />
-                </div>
-                <h3 className="text-xl font-bold mb-2">이메일</h3>
-                <a href="mailto:admin@smap.site" className="text-gray-600 hover:text-blue-600">
-                  <p className="text-lg">admin@smap.site</p>
+                <a 
+                  href="mailto:admin@smap.site" 
+                  className="w-full h-full flex flex-col items-center justify-center cursor-pointer bg-white hover:bg-gray-50 transition-colors rounded-lg"
+                >
+                  <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <FaEnvelope size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">이메일</h3>
+                  <p className="text-lg text-gray-600">admin@smap.site</p>
                 </a>
               </div>
             </div>
